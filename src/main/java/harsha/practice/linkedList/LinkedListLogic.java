@@ -1,11 +1,12 @@
 package harsha.practice.linkedList;
 
-/*- Operations of Linked list
-- insert
-- insertAfter
-- insertAtIndex
-- delete
-- showList*/
+/**
+ * 
+ * This class provides all the logics i.e. basically implementations
+ * 
+ * @author Harsha.Pulluru
+ * 
+ */
 public class LinkedListLogic {
 
 	Node head;
