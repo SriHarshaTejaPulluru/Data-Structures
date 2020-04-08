@@ -95,7 +95,13 @@ public class LinkedListLogic {
 			n.next = node.next;
 			node = null;
 		}
+	}
 
+	/**
+	 * clears the elements in linked list. For this, just make the head to null
+	 */
+	public void clear() {
+		head = null;
 	}
 
 }
