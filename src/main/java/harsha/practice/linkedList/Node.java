@@ -6,7 +6,7 @@ package harsha.practice.linkedList;
  * @author Harsha.Pulluru
  *
  */
-public class Node {
-	String data;
-	Node next;
+public class Node<T> {
+	T data;
+	Node<T> next;
 }

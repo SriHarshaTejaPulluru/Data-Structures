@@ -5,35 +5,38 @@ package harsha.practice.linkedList;
  * This class provides all the logics i.e. basically implementations
  * 
  * @author Harsha.Pulluru
+ * @param <T>
  * 
  */
-public class LinkedListLogic {
+public class LinkedListLogic<T> {
 
-	Node head;
+	Node<T> head;
+	int size;
 
 	/**
 	 * @param data input element This method inserts the data in to linked list
 	 */
-	public void insert(String data) {
-		Node node = new Node();
+	public void insert(T data) {
+		Node<T> node = new Node<T>();
 		node.data = data;
 		node.next = null;
 		if (head == null) {
 			head = node;
 		} else {
-			Node n = head;
+			Node<T> n = head;
 			while (n.next != null) {
 				n = n.next;
 			}
 			n.next = node;
 		}
+		size++;
 	}
 
 	/**
 	 * This method prints the list of nodes that are present
 	 */
 	public void showList() {
-		Node n = head;
+		Node<T> n = head;
 		while (n.next != null) {
 			System.out.println(n.data);
 			n = n.next;
@@ -46,35 +49,36 @@ public class LinkedListLogic {
 	 * 
 	 * @param data input String
 	 */
-	public void insertFirst(String data) {
-		Node node = new Node();
+	public void insertFirst(T data) {
+		Node<T> node = new Node<T>();
 		node.data = data;
 		node.next = head;
 		head = node;
+		size++;
 	}
 
 	/**
 	 * @param index index where the element needs to be inserted
 	 * @param data input string
 	 */
-	public void insertAt(int index, String data) {
-
+	public void insertAt(int index, T data) {
 		if (index == 0) {
 			insertFirst(data);
 		} else {
 			int currentIndex = 0;
-			Node n = head;
+			Node<T> n = head;
 			while (n.next != null) {
 				currentIndex++;
 				if (currentIndex == index) {
-					Node node = new Node();
-					node.data = data;
+					Node<T> node = new Node<T>();
+					node.data = (T) data;
 					node.next = n.next;
 					n.next = node;
 					break;
 				} else {
 					n = n.next;
 				}
+				size++;
 			}
 		}
 	}
@@ -87,14 +91,15 @@ public class LinkedListLogic {
 		if (index == 0) {
 			head = head.next;
 		} else {
-			Node n = head;
+			Node<T> n = head;
 			for (int i = 0; i < index - 1; i++) {
 				n = n.next;
 			}
-			Node node = n.next;
+			Node<T> node = n.next;
 			n.next = node.next;
 			node = null;
 		}
+		size--;
 	}
 
 	/**
@@ -102,6 +107,10 @@ public class LinkedListLogic {
 	 */
 	public void clear() {
 		head = null;
+	}
+
+	public boolean isEmpty() {
+		return size == 0;
 	}
 
 }
