@@ -1,5 +1,7 @@
 package harsha.practice.linkedList;
 
+import harsha.practice.commons.Node;
+
 /**
  * 
  * This class provides all the logics i.e. basically implementations
@@ -18,16 +20,16 @@ public class LinkedListLogic<T> {
 	 */
 	public void insert(T data) {
 		Node<T> node = new Node<T>();
-		node.data = data;
-		node.next = null;
+		node.setData(data);
+		node.setNext(null);
 		if (head == null) {
 			head = node;
 		} else {
 			Node<T> n = head;
-			while (n.next != null) {
-				n = n.next;
+			while (n.getNext() != null) {
+				n = n.getNext();
 			}
-			n.next = node;
+			n.setNext(node);
 		}
 		size++;
 	}
@@ -37,11 +39,11 @@ public class LinkedListLogic<T> {
 	 */
 	public void showList() {
 		Node<T> n = head;
-		while (n.next != null) {
-			System.out.println(n.data);
-			n = n.next;
+		while (n.getNext() != null) {
+			System.out.println(n.getData());
+			n = n.getNext();
 		}
-		System.out.println(n.data);
+		System.out.println(n.getData());
 	}
 
 	/**
@@ -51,8 +53,8 @@ public class LinkedListLogic<T> {
 	 */
 	public void insertFirst(T data) {
 		Node<T> node = new Node<T>();
-		node.data = data;
-		node.next = head;
+		node.setData(data);
+		node.setNext(head);
 		head = node;
 		size++;
 	}
@@ -67,16 +69,16 @@ public class LinkedListLogic<T> {
 		} else {
 			int currentIndex = 0;
 			Node<T> n = head;
-			while (n.next != null) {
+			while (n.getNext() != null) {
 				currentIndex++;
 				if (currentIndex == index) {
 					Node<T> node = new Node<T>();
-					node.data = (T) data;
-					node.next = n.next;
-					n.next = node;
+					node.setData((T) data);
+					node.setNext(n.getNext());
+					n.setNext(node);
 					break;
 				} else {
-					n = n.next;
+					n = n.getNext();
 				}
 				size++;
 			}
@@ -89,14 +91,14 @@ public class LinkedListLogic<T> {
 	public void deleteAt(int index) {
 
 		if (index == 0) {
-			head = head.next;
+			head = head.getNext();
 		} else {
 			Node<T> n = head;
 			for (int i = 0; i < index - 1; i++) {
-				n = n.next;
+				n = n.getNext();
 			}
-			Node<T> node = n.next;
-			n.next = node.next;
+			Node<T> node = n.getNext();
+			n.setNext(node.getNext());
 			node = null;
 		}
 		size--;
