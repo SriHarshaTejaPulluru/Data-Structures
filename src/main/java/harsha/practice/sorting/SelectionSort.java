@@ -14,15 +14,18 @@ import harsha.practice.commons.SortingHelpingMethods;
  *
  */
 public class SelectionSort {
-
 	public static void main(String[] args) {
 		int[] arr = SortingHelpingMethods.getArray();
+		long t1 = System.currentTimeMillis();
 		for (int i = 0; i < arr.length - 1; i++) {
 			for (int j = i + 1; j < arr.length; j++) {
-				SortingHelpingMethods.swapElements(arr, i, j);
+				if (arr[j] < arr[i]) {
+					SortingHelpingMethods.swapElements(arr, i, j);
+				}
 			}
 		}
 		SortingHelpingMethods.printElements(arr);
+		System.out.println();
+		System.out.println(System.currentTimeMillis() - t1);
 	}
-
 }

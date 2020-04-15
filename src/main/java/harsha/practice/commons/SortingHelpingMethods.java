@@ -8,7 +8,7 @@ package harsha.practice.commons;
  */
 public class SortingHelpingMethods {
 
-	private static int[] array = new int[] { 1, 2, 5, 4, 7, 9 };
+	private static int[] array = new int[] { 5, 8, 1, 3, 2, 6, 4, 10, 9, 7 };
 
 	public static int[] getArray() {
 		return array;
@@ -20,19 +20,11 @@ public class SortingHelpingMethods {
 		}
 	}
 
-	public static boolean swapElements(int[] arr, int i, int j) {
+	public static void swapElements(int[] arr, int i, int j) {
 		int temp;
-		boolean areElementsSwapped = false;
-		System.out.print("arr[j] " + arr[j]);
-		System.out.print(" arr[i] " + arr[i]);
-		if (arr[j] < arr[i]) {
-			temp = arr[j];
-			arr[j] = arr[i];
-			arr[i] = temp;
-			areElementsSwapped = true;
-			System.out.print(" Elements swapped");
-		}
-		System.out.println();
-		return areElementsSwapped;
+		temp = arr[j];
+		arr[j] = arr[i];
+		arr[i] = temp;
+
 	}
 }
