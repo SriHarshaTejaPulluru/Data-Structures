@@ -11,8 +11,8 @@ import harsha.practice.commons.StackUnderflowError;
  * Famous Paranthesis problem to check if the parantheis are balanced or not
  */
 public class BalancedParanthesisDemo {
-	private static HashMap<Character, Character> bracketsMap = new HashMap<>();
-	private static HashSet<Character> openingBracketSet = new HashSet<>();
+	private static HashMap<Character, Character> bracketsMap = new HashMap<Character, Character>();
+	private static HashSet<Character> openingBracketSet = new HashSet<Character>();
 
 	static {
 		bracketsMap.put('}', '{');
@@ -33,7 +33,7 @@ public class BalancedParanthesisDemo {
 
 	private static boolean areParanthesisBalanced(String paranthesisString) {
 		try {
-			StackLogic<Character> stack = new StackLogic<>();
+			StackLogic<Character> stack = new StackLogic<Character>();
 			Character paranthesis;
 			for (int i = 0; i < paranthesisString.length(); i++) {
 				paranthesis = paranthesisString.charAt(i);

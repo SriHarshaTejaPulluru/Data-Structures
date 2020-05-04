@@ -12,7 +12,7 @@ public class QueueDemo {
 		circularQueue.dequeue();
 		circularQueue.showQueue();*/
 		
-		QueueUsing2StacksLogic<String> queueUsing2Stacks= new QueueUsing2StacksLogic<>();
+		QueueUsing2StacksLogic<String> queueUsing2Stacks= new QueueUsing2StacksLogic<String>();
 		queueUsing2Stacks.enqueue("Sri");
 		queueUsing2Stacks.enqueue("Harsha");
 		queueUsing2Stacks.enqueue("Teja");

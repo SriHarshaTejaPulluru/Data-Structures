@@ -10,8 +10,8 @@ public class QueueUsing2StacksLogic<T> {
 	StackLogic<T> reverseStack;
 
 	public QueueUsing2StacksLogic() {
-		fowrwardStack = new StackLogic<>();
-		reverseStack = new StackLogic<>();
+		fowrwardStack = new StackLogic<T>();
+		reverseStack = new StackLogic<T>();
 	}
 
 	public void enqueue(T data) {
