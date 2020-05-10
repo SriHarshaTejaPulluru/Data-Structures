@@ -7,18 +7,20 @@ public class ShellSort {
 	public static void main(String[] args) {
 		int[] arr = SortingHelpingMethods.getArray();
 		int incrementValue = 5;
+		long t1 = System.currentTimeMillis();
 		for (int i = 0; i < incrementValue; i++) {
 			sortArray(arr, i, incrementValue);
 		}
 		sortArray(arr, 0, 1);
+		System.out.println(System.currentTimeMillis() - t1);
 		SortingHelpingMethods.printElements(arr);
 	}
 
 	private static void sortArray(int[] arr, int startingFrom, int incValue) {
 		for (int i = startingFrom; i < arr.length - incValue; i = i + incValue) {
-			for (int j = i + incValue; j-incValue >= 0; j = j - incValue) {
+			for (int j = i + incValue; j - incValue >= 0; j = j - incValue) {
 				if (arr[j] < arr[j - incValue]) {
-					SortingHelpingMethods.swapElements(arr, j-incValue, j);
+					SortingHelpingMethods.swapElements(arr, j - incValue, j);
 				} else {
 					break;
 				}

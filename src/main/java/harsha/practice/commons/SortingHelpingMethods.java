@@ -8,9 +8,14 @@ package harsha.practice.commons;
  */
 public class SortingHelpingMethods {
 
-	private static int[] array = new int[] { 5, 8, 1, 3, 2, 6, 4, 10, 9, 7 };
+	private static int[] array;
+	static final int BOUNDARY_LIMIT = 1000;
 
 	public static int[] getArray() {
+		array = new int[BOUNDARY_LIMIT];
+		for (int i = 0, j = BOUNDARY_LIMIT; i < BOUNDARY_LIMIT; i++, j--) {
+			array[i] = j;
+		}
 		return array;
 	}
 
@@ -27,4 +32,5 @@ public class SortingHelpingMethods {
 		arr[i] = temp;
 
 	}
+
 }
