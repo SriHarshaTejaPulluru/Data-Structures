@@ -49,12 +49,12 @@ public class CircularQueueLogic<T> {
 		}
 	}
 
-	private boolean isEmpty() {
+	public boolean isEmpty() {
 
 		return front == EMPTY_VALUE;
 	}
 
-	private boolean isFull() {
+	public boolean isFull() {
 
 		int tail = (rear + 1) % MAX_SIZE;
 		return tail == front;

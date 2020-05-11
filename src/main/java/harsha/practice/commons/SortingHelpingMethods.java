@@ -14,7 +14,8 @@ public class SortingHelpingMethods {
 	public static int[] getArray() {
 		array = new int[BOUNDARY_LIMIT];
 		for (int i = 0, j = BOUNDARY_LIMIT; i < BOUNDARY_LIMIT; i++, j--) {
-			array[i] = j;
+			//array[i] = j; //reverse Order
+			array[i] = i+1;
 		}
 		return array;
 	}
