@@ -1,16 +1,16 @@
 package harsha.practice.sorting;
 
-import harsha.practice.commons.SortingHelpingMethods;
+import harsha.practice.commons.HelperUtility;
 
 public class SelectionSortReTest {
 
 	public static void main(String[] args) {
 
-		int[] arr = SortingHelpingMethods.getArray();
+		int[] arr = HelperUtility.getArray();
 		long t1 = System.currentTimeMillis();
 		selectionSort(arr);
 		System.out.println(System.currentTimeMillis() - t1);
-		SortingHelpingMethods.printElements(arr);
+		HelperUtility.printElements(arr);
 
 	}
 
@@ -18,7 +18,7 @@ public class SelectionSortReTest {
 		for (int i = 0; i < arr.length - 1; i++) {
 			for (int j = i + 1; j < arr.length; j++) {
 				if (arr[i] > arr[j]) {
-					SortingHelpingMethods.swapElements(arr, i, j);
+					HelperUtility.swapElements(arr, i, j);
 				}
 			}
 		}

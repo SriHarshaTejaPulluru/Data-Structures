@@ -1,15 +1,15 @@
 package harsha.practice.sorting;
 
-import harsha.practice.commons.SortingHelpingMethods;
+import harsha.practice.commons.HelperUtility;
 
 public class MergeSortRetest {
 
 	public static void main(String[] args) {
-		int arr[] = SortingHelpingMethods.getArray();
+		int arr[] = HelperUtility.getArray();
 		long t1 = System.currentTimeMillis();
 		mergeSort(arr);
 		System.out.println(System.currentTimeMillis() - t1);
-		SortingHelpingMethods.printElements(arr);
+		HelperUtility.printElements(arr);
 	}
 
 	private static void mergeSort(int[] arr) {

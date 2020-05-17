@@ -1,6 +1,6 @@
 package harsha.practice.sorting;
 
-import harsha.practice.commons.SortingHelpingMethods;
+import harsha.practice.commons.HelperUtility;
 
 public class QuickSort {
 
@@ -9,7 +9,7 @@ public class QuickSort {
 		int[] fullArr = new int[] { 6, 5, 11, 4, 2, 5, 10, 3, 7, 8, 9 };
 
 		quickSort(fullArr, 0, fullArr.length - 1);
-		SortingHelpingMethods.printElements(fullArr);
+		HelperUtility.printElements(fullArr);
 	}
 
 	private static void quickSort(int[] fullArr, int low, int high) {
@@ -36,10 +36,10 @@ public class QuickSort {
 				h--;
 			}
 			if (l < h) {
-				SortingHelpingMethods.swapElements(arrToDivide, l, h);
+				HelperUtility.swapElements(arrToDivide, l, h);
 			}
 		}
-		SortingHelpingMethods.swapElements(arrToDivide, low, h);
+		HelperUtility.swapElements(arrToDivide, low, h);
 
 		return h;
 	}

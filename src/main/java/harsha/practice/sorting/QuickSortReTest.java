@@ -1,15 +1,15 @@
 package harsha.practice.sorting;
 
-import harsha.practice.commons.SortingHelpingMethods;
+import harsha.practice.commons.HelperUtility;
 
 public class QuickSortReTest {
 
 	public static void main(String[] args) {
-		int[] arr = SortingHelpingMethods.getArray();
+		int[] arr = HelperUtility.getArray();
 		long t1 = System.currentTimeMillis();
 		quickSort(arr, 0, arr.length-1);
 		System.out.println(System.currentTimeMillis() - t1);
-		SortingHelpingMethods.printElements(arr);
+		HelperUtility.printElements(arr);
 	}
 
 	private static void quickSort(int[] arr, int low, int high) {
@@ -35,10 +35,10 @@ public class QuickSortReTest {
 				h--;
 			}
 			if (l < h) {
-				SortingHelpingMethods.swapElements(arr, l, h);
+				HelperUtility.swapElements(arr, l, h);
 			}
 		}
-		SortingHelpingMethods.swapElements(arr, low, h);
+		HelperUtility.swapElements(arr, low, h);
 
 		return h;
 	}

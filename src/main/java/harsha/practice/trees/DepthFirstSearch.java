@@ -1,25 +1,13 @@
 package harsha.practice.trees;
 
-@SuppressWarnings({ "unchecked", "rawtypes" })
+import harsha.practice.commons.HelperUtility;
+
+@SuppressWarnings( "rawtypes" )
 public class DepthFirstSearch {
 
 	public static void main(String[] args) {
 
-		Node root = new Node("A");
-		Node b = new Node("B");
-		Node c = new Node("C");
-		Node d = new Node("D");
-		Node e = new Node("E");
-		Node f = new Node("F");
-		Node g = new Node("G");
-		Node h = new Node("H");
-		root.setLeftChild(b);
-		root.setRightChild(c);
-		c.setLeftChild(d);
-		c.setRightChild(e);
-		d.setLeftChild(f);
-		d.setRightChild(h);
-		e.setRightChild(g);
+		Node root = HelperUtility.getRoot();
 		preOrderTraversal(root);
 		System.out.println();
 		inOrderTraversal(root);
@@ -33,14 +21,13 @@ public class DepthFirstSearch {
 		if(node==null) {
 			return;
 		}
-		
 		postOrderTraversal(node.getLeftChild());
 		postOrderTraversal(node.getRightChild());
 		print(node);
 		
 	}
 
-	private static void inOrderTraversal(Node root) {
+	public static void inOrderTraversal(Node root) {
 
 		if (root == null) {
 			return;

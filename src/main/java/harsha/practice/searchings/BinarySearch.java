@@ -1,11 +1,11 @@
 package harsha.practice.searchings;
 
-import harsha.practice.commons.SortingHelpingMethods;
+import harsha.practice.commons.HelperUtility;
 
 public class BinarySearch {
 
 	public static void main(String[] args) {
-		int[] arr = SortingHelpingMethods.getArray();
+		int[] arr = HelperUtility.getArray();
 		int index = binarySearch(arr, 700);
 		System.out.println("Index is " + index);
 	}

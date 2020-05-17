@@ -1,15 +1,15 @@
 package harsha.practice.sorting;
 
-import harsha.practice.commons.SortingHelpingMethods;
+import harsha.practice.commons.HelperUtility;
 
 public class BubbleSortReTest {
 
 	public static void main(String[] args) {
-		int[] arr = SortingHelpingMethods.getArray();
+		int[] arr = HelperUtility.getArray();
 		long t1 = System.currentTimeMillis();
 		bubbleSort(arr);
 		System.out.println(System.currentTimeMillis() - t1);
-		SortingHelpingMethods.printElements(arr);
+		HelperUtility.printElements(arr);
 	}
 
 	private static void bubbleSort(int[] arr) {
@@ -17,7 +17,7 @@ public class BubbleSortReTest {
 			boolean areElementsSwapped = false;
 			for (int j = 0; j < arr.length - i - 1; j++) {
 				if (arr[j] > arr[j + 1]) {
-					SortingHelpingMethods.swapElements(arr, j, j + 1);
+					HelperUtility.swapElements(arr, j, j + 1);
 					areElementsSwapped = true;
 				}
 			}
